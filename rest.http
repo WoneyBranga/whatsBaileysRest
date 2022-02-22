@@ -1,0 +1,45 @@
+@host = http://127.0.0.1
+@porta = 8000
+@url  ={{host}}:{{porta}}
+@numeroDestino= "5548988538745"
+@mensagemTeste = "Mensagem de Teste 123 é acentuação com quebra e emoji 😱😱😱"
+
+### SEND MESSAGE
+POST {{url}}/send-message HTTP/1.1
+content-type: application/json
+
+{
+	"number": {{numeroDestino}},
+	"message": {{mensagemTeste}}
+}
+
+### SEND BUTTONS
+POST {{url}}/send-buttons HTTP/1.1
+content-type: application/json
+
+{
+	"number": {{numeroDestino}},
+	"message": {{mensagemTeste}},
+    "buttonId1": "1",
+    "buttonId2": "2",
+    "displayText1": "Sim",
+    "displayText2": "Não",
+    "contentText": "Teste Content",
+    "footerText": "Teste Footer"
+}
+
+### SEND LIST
+POST {{url}}/send-lists HTTP/1.1
+content-type: application/json
+
+{
+	"number": {{numeroDestino}},
+    "titleR1":"Titulo 01",
+    "titleR2":"Titulo 02",
+    "descriptionR1":"Description 01",
+    "descriptionR2":"Description 02",
+    "titleS":" Titulos",
+    "buttonText":"Botao texto",
+    "description":"Descricao"
+}
+
